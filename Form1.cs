@@ -22,8 +22,18 @@ namespace Contacts
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            BindGrid();
+        }
+
+        private void BindGrid()
+        {
             ContactListGridView.AutoGenerateColumns = false;
             ContactListGridView.DataSource = repository.SelectAll();
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+          BindGrid();
         }
     }
 }

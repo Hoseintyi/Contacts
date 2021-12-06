@@ -29,6 +29,7 @@ namespace Contacts
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -39,12 +40,18 @@ namespace Contacts
             this.mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staticPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnAddNewContact = new System.Windows.Forms.ToolStripButton();
+            this.BtnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ContactListGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BtnAddNewContact,
+            this.BtnRefresh});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(784, 25);
@@ -132,6 +139,25 @@ namespace Contacts
             this.email.Name = "email";
             this.email.ReadOnly = true;
             // 
+            // BtnAddNewContact
+            // 
+            this.BtnAddNewContact.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.BtnAddNewContact.Image = ((System.Drawing.Image)(resources.GetObject("BtnAddNewContact.Image")));
+            this.BtnAddNewContact.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnAddNewContact.Name = "BtnAddNewContact";
+            this.BtnAddNewContact.Size = new System.Drawing.Size(106, 22);
+            this.BtnAddNewContact.Text = "افزودن شخص جدید";
+            // 
+            // BtnRefresh
+            // 
+            this.BtnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.BtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("BtnRefresh.Image")));
+            this.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.Size = new System.Drawing.Size(64, 22);
+            this.BtnRefresh.Text = "بروز رسانی";
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,6 +172,8 @@ namespace Contacts
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "دفترچه تلفن من";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ContactListGridView)).EndInit();
             this.ResumeLayout(false);
@@ -165,6 +193,8 @@ namespace Contacts
         private System.Windows.Forms.DataGridViewTextBoxColumn mobile;
         private System.Windows.Forms.DataGridViewTextBoxColumn staticPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.ToolStripButton BtnAddNewContact;
+        private System.Windows.Forms.ToolStripButton BtnRefresh;
     }
 }
 
