@@ -35,5 +35,17 @@ namespace Contacts
         {
           BindGrid();
         }
+
+        private void BtnAddNewContact_Click(object sender, EventArgs e)
+        {
+            addOrEditForm newAddOrEditForm = new addOrEditForm();
+
+            newAddOrEditForm.ShowDialog();
+
+            if (newAddOrEditForm.DialogResult== DialogResult.OK )
+            {
+                BindGrid();
+            }
+        }
     }
 }

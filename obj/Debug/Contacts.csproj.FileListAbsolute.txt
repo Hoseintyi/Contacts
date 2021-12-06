@@ -7,3 +7,4 @@ D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\obj\Debug\Conta
 D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\obj\Debug\Contacts.csproj.CoreCompileInputs.cache
 D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\obj\Debug\Contacts.exe
 D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\obj\Debug\Contacts.pdb
+D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\obj\Debug\Contacts.addOrEditForm.resources

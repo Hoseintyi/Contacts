@@ -159,6 +159,7 @@ namespace Contacts
             this.btnSubmit.TabIndex = 13;
             this.btnSubmit.Text = "ثبت";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // addOrEditForm
             // 
@@ -172,6 +173,7 @@ namespace Contacts
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "افزودن شخص جدید";
+            this.Load += new System.EventHandler(this.addOrEditForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -31,6 +31,8 @@ namespace Contacts
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.BtnAddNewContact = new System.Windows.Forms.ToolStripButton();
+            this.BtnRefresh = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ContactListGridView = new System.Windows.Forms.DataGridView();
@@ -40,8 +42,6 @@ namespace Contacts
             this.mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staticPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnAddNewContact = new System.Windows.Forms.ToolStripButton();
-            this.BtnRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ContactListGridView)).BeginInit();
@@ -57,6 +57,26 @@ namespace Contacts
             this.toolStrip1.Size = new System.Drawing.Size(784, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // BtnAddNewContact
+            // 
+            this.BtnAddNewContact.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.BtnAddNewContact.Image = ((System.Drawing.Image)(resources.GetObject("BtnAddNewContact.Image")));
+            this.BtnAddNewContact.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnAddNewContact.Name = "BtnAddNewContact";
+            this.BtnAddNewContact.Size = new System.Drawing.Size(106, 22);
+            this.BtnAddNewContact.Text = "افزودن شخص جدید";
+            this.BtnAddNewContact.Click += new System.EventHandler(this.BtnAddNewContact_Click);
+            // 
+            // BtnRefresh
+            // 
+            this.BtnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.BtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("BtnRefresh.Image")));
+            this.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.Size = new System.Drawing.Size(64, 22);
+            this.BtnRefresh.Text = "بروز رسانی";
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // groupBox1
             // 
@@ -138,25 +158,6 @@ namespace Contacts
             this.email.HeaderText = "ایمیل";
             this.email.Name = "email";
             this.email.ReadOnly = true;
-            // 
-            // BtnAddNewContact
-            // 
-            this.BtnAddNewContact.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BtnAddNewContact.Image = ((System.Drawing.Image)(resources.GetObject("BtnAddNewContact.Image")));
-            this.BtnAddNewContact.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnAddNewContact.Name = "BtnAddNewContact";
-            this.BtnAddNewContact.Size = new System.Drawing.Size(106, 22);
-            this.BtnAddNewContact.Text = "افزودن شخص جدید";
-            // 
-            // BtnRefresh
-            // 
-            this.BtnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("BtnRefresh.Image")));
-            this.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(64, 22);
-            this.BtnRefresh.Text = "بروز رسانی";
-            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // Form1
             // 
