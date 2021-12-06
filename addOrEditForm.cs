@@ -22,7 +22,7 @@ namespace Contacts
 
         private void addOrEditForm_Load(object sender, EventArgs e)
         {
-
+            this.Text = "افزودن شخص جدید";
         }
 
 
