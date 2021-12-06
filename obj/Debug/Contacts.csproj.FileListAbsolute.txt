@@ -1,0 +1,9 @@
+D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\bin\Debug\Contacts.exe
+D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\bin\Debug\Contacts.pdb
+D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\obj\Debug\Contacts.csproj.AssemblyReference.cache
+D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\obj\Debug\Contacts.Form1.resources
+D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\obj\Debug\Contacts.Properties.Resources.resources
+D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\obj\Debug\Contacts.csproj.GenerateResource.cache
+D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\obj\Debug\Contacts.csproj.CoreCompileInputs.cache
+D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\obj\Debug\Contacts.exe
+D:\CSharp Projects\Windows Form Application\My Contacts\Contacts\obj\Debug\Contacts.pdb

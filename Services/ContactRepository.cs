@@ -10,7 +10,7 @@ namespace Contacts.Services
 {
   public  class ContactRepository:IContactRepository
     {
-        private string myconnection = "DataSource=.; Initial Catalog= CotactWindowsFormApplication_DB; Integrated Security= true";
+        private string mysqlconn = "Data Source=.;Initial Catalog=CotactWindowsFormApplication_DB;Integrated Security=True;MultipleActiveResultSets=true";
         public bool Insert(string name, string family, string mobile, string staticPhone, string email)
         {
             throw new NotImplementedException();
@@ -29,7 +29,7 @@ namespace Contacts.Services
         public DataTable SelectAll()
         {
             string query = "Select * From contactInfo";
-            SqlConnection connection = new SqlConnection(myconnection);
+            SqlConnection connection = new SqlConnection(mysqlconn);
             SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
             DataTable data = new DataTable();
             adapter.Fill(data);
