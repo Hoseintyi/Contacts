@@ -41,12 +41,52 @@ namespace Contacts.Services
 
         public bool Update(int contactId, string name, string family, string mobile, string staticPhone, string email)
         {
-            throw new NotImplementedException();
+            SqlConnection connection = new SqlConnection(mysqlconn);
+            try
+            {
+
+                string query ="Update contactInfo Set name=@name,family=@family,mobile=@mobile,staticPhone=@staticPhone,email=@email Where contactId=@Id";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Id", contactId);
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@family", family);
+                command.Parameters.AddWithValue("@mobile", mobile);
+                command.Parameters.AddWithValue("@staticPhone", staticPhone);
+                command.Parameters.AddWithValue("@email", email);
+                connection.Open();
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
         public bool Delete(int contactId)
         {
-            throw new NotImplementedException();
+            SqlConnection connection = new SqlConnection(mysqlconn);
+            try
+            {
+                string query = "Delete From contactInfo where contactId=@ID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID", contactId);
+                connection.Open();
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception )
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
         public DataTable SelectAll()
@@ -61,7 +101,23 @@ namespace Contacts.Services
 
         public DataTable SelectContactById(int contactId)
         {
-            throw new NotImplementedException();
+            string query = "Select * From contactInfo Where contactId="+contactId;
+            SqlConnection connection = new SqlConnection(mysqlconn);
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
+        }
+
+        public DataTable Search(string parameter)
+        {
+            string query = "Select * From contactInfo Where name like @parameter or family like @parameter";
+            SqlConnection connection = new SqlConnection(mysqlconn);
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            adapter.SelectCommand.Parameters.AddWithValue("@parameter", "%" + parameter + "%");
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            return data;
         }
     }
 }

@@ -18,6 +18,8 @@ namespace Contacts.Repository
 
         DataTable SelectContactById(int contactId);
 
+        DataTable Search(string parameter);
+
 
     }
 }

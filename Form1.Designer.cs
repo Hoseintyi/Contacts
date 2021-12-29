@@ -42,7 +42,12 @@ namespace Contacts
             this.mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staticPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.inputSearch = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ContactListGridView)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +85,8 @@ namespace Contacts
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.inputSearch);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 29);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(760, 52);
@@ -159,11 +166,50 @@ namespace Contacts
             this.email.Name = "email";
             this.email.ReadOnly = true;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(697, 393);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "ویرایش";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(616, 393);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "حذف";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(709, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "جستجو";
+            // 
+            // inputSearch
+            // 
+            this.inputSearch.Location = new System.Drawing.Point(265, 20);
+            this.inputSearch.Name = "inputSearch";
+            this.inputSearch.Size = new System.Drawing.Size(438, 21);
+            this.inputSearch.TabIndex = 2;
+            this.inputSearch.TextChanged += new System.EventHandler(this.inputSearch_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
@@ -176,6 +222,8 @@ namespace Contacts
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ContactListGridView)).EndInit();
             this.ResumeLayout(false);
@@ -197,6 +245,10 @@ namespace Contacts
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.ToolStripButton BtnAddNewContact;
         private System.Windows.Forms.ToolStripButton BtnRefresh;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TextBox inputSearch;
+        private System.Windows.Forms.Label label1;
     }
 }
 

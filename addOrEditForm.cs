@@ -14,6 +14,8 @@ namespace Contacts
     public partial class addOrEditForm : Form
     {
         private IContactRepository repository;
+
+        public int contactId=0;
         public addOrEditForm()
         {
             InitializeComponent();
@@ -22,7 +24,21 @@ namespace Contacts
 
         private void addOrEditForm_Load(object sender, EventArgs e)
         {
-            this.Text = "افزودن شخص جدید";
+            if (contactId==0)
+            {
+                this.Text = "افزودن شخص جدید";
+            }
+            else
+            {
+                this.Text = "ویرایش ";
+               DataTable dt =  repository.SelectContactById(contactId);
+               inputName.Text = dt.Rows[0][1].ToString();
+               inputFamily.Text = dt.Rows[0][2].ToString();
+               inputMobile.Text = dt.Rows[0][3].ToString();
+               inputStaticPhone.Text = dt.Rows[0][4].ToString();
+               inputEmail.Text = dt.Rows[0][5].ToString();
+               btnSubmit.Text = "ویرایش";
+            }
         }
 
 
@@ -49,8 +65,18 @@ namespace Contacts
         {
             if (ValidateInputs())
             {
-              bool isSuccess =   repository.Insert(inputName.Text, inputFamily.Text, inputMobile.Text, inputStaticPhone.Text,
-                    inputEmail.Text);
+                bool isSuccess;
+
+                if (contactId==0)
+                {
+                    isSuccess = repository.Insert(inputName.Text, inputFamily.Text, inputMobile.Text, inputStaticPhone.Text,
+                        inputEmail.Text);
+                }
+                else
+                {
+                    isSuccess = repository.Update(contactId,inputName.Text, inputFamily.Text, inputMobile.Text, inputStaticPhone.Text,
+                        inputEmail.Text);
+                }
 
               if (isSuccess==true)
               {

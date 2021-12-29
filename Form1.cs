@@ -47,5 +47,48 @@ namespace Contacts
                 BindGrid();
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (ContactListGridView.CurrentRow!=null)
+            {
+                string name = ContactListGridView.CurrentRow.Cells[1].Value.ToString();
+                string family = ContactListGridView.CurrentRow.Cells[2].Value.ToString();
+                string fullName = name + " " + family;
+
+                if (MessageBox.Show($"آیا از حذف {fullName} مطمئن هستید ؟؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+                {
+                    int contactId = int.Parse(ContactListGridView.CurrentRow.Cells[0].Value.ToString());
+                        repository.Delete(contactId);
+                        BindGrid();
+                }
+            }
+            else
+            {
+                MessageBox.Show("لطفا یک شخص را انتخاب کنید","توجه توجه", MessageBoxButtons.OK , MessageBoxIcon.Warning );
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (ContactListGridView.CurrentRow!=null)
+            {
+                var ContactId = int.Parse(ContactListGridView.CurrentRow.Cells[0].Value.ToString());
+
+                addOrEditForm newAddOrEditForm = new addOrEditForm();
+                newAddOrEditForm.contactId = ContactId;
+                newAddOrEditForm.ShowDialog();
+
+                if (newAddOrEditForm.DialogResult == DialogResult.OK)
+                {
+                    BindGrid();
+                }
+            }
+        }
+
+        private void inputSearch_TextChanged(object sender, EventArgs e)
+        {
+            ContactListGridView.DataSource = repository.Search(inputSearch.Text);
+        }
     }
 }
